@@ -1,7 +1,7 @@
 import re
 
 {"player_name": str(),  "FG%": 0,"3P%": 0,  "FT%": 0,  "TRB": 0,  "PF": 0, "PTS": 0}
-def action(current_action):
+def find_action(current_action):
     _3P = [re.compile(r'(.*) makes 3-pt jump shot from').search(current_action), '3P']
 
     MIS_3P = [re.compile(r'(.*) misses 3-pt jump shot from').search(current_action), '3PA']
@@ -26,7 +26,7 @@ def action(current_action):
 
     AST = [re.compile(r'assist by (.*)\)').search(current_action), 'AST']
 
-    STL = [re.compile(r'steal by (.*)').search(current_action), 'STL']
+    STL = [re.compile(r'steal by (.*)\)').search(current_action), 'STL']
 
     PF = [re.compile(r'Personal foul by (.*) \(').search(current_action), 'PF']
 
@@ -34,7 +34,7 @@ def action(current_action):
 
     OF = [re.compile(r'Offensive foul by (.*) \(').search(current_action), 'PF']
 
-    CF = [re.compile(r'Clear path foul by (.*)').search(current_action), 'CF']
+    CF = [re.compile(r'Clear path foul by (.*)').search(current_action), 'PF']
 
     LBF = [re.compile(r'Loose ball foul by (.*) \(').search(current_action), 'PF']
 
@@ -52,4 +52,3 @@ def action(current_action):
     case = [_3P, MIS_3P, _2P, MIS_2P, FT, FTA, PF, ORB, DRB, TOV, BLK, AST, STL, PF, SHF, OF, CF, LBF, Dunk, TwoPLayup_missed, FTClear, Hookshot_missed, HookShot]
 
     return [i for i in case if i[0]]
-
