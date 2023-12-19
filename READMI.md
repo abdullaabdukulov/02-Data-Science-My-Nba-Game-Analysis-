@@ -1,28 +1,7 @@
 # 02-Data Science My Nba Game Analysis
 
 
-<div class="row">
-<div class="col tab-content">
-<div class="tab-pane active show" id="subject" role="tabpanel">
-<div class="row">
-<div class="col-md-12 col-xl-12">
-<div class="markdown-body">
-<p class="text-muted m-b-15">
-</p><h2>My Nba Game Analysis</h2>
-<table>
-<thead>
-<tr>
-<th>Technical details</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Submit file</td>
-<td>my_nba_game_analysis.py</td>
-</tr>
-</tbody>
-</table>
+
 <hr>
 <p>We have caught all the <code>play_by_play</code> happening during a <code>NBA</code> game so we have a flow of data and we want to create a nice array of hash which will sum everything.</p>
 <h1>Part I</h1>
@@ -112,30 +91,26 @@ As data scientist, immersion inside your dataset is key and I think you can easi
 </li>
 </ul>
 
-<p></p>
-</div>
 
-</div>
-</div>
-</div>
-<div class="tab-pane" id="resources" role="tabpanel">
-<div class="row">
-<div class="col-xl-12">
-<div class="row text-center">
-<div class="col p-t-10 f-12">
-<p>
+## Instalation
+**For using this project you need to install required packages below using this command on your terminal**
 
-</p>
-</div>
-</div>
-<div class="row text-center">
-<div class="col">
-<iframe frameborder="0" src="https://www.youtube.com/embed/vZt-DSAeCkc"></iframe>
-</div>
-</div>
+```bash
+    pip install -r requirements.txt
+```
 
-</div>
-</div>
-</div>
-</div>
-</div>
+## Usage
+First of all you need to clone this repo
+
+```bash
+    # use this command on your terminal
+    https://github.com/ahrorhaidarov/02-Data-Science-My-Nba-Game-Analysis-.git
+```
+
+Then run `the_my_nba_game_analysis.py` file
+
+```bash
+    # use this command on your terminal
+    python the_my_nba_game_analysis.py
+```
+

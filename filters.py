@@ -28,13 +28,13 @@ def find_action(current_action):
 
     STL = [re.compile(r'steal by (.*)\)').search(current_action), 'STL', 0]
 
-    PF = [re.compile(r'Personal foul by (.*) \(').search(current_action), 'PF', 0]
+    PF = [re.compile(r'Personal foul by (.*) \(').search(current_action), 'FFF', 0]
 
-    SHF = [re.compile(r'Shooting foul by (.*) \(').search(current_action), 'PF', 0]
+    SHF = [re.compile(r'Shooting foul by (.*) \(').search(current_action), 'FFF', 0]
 
     OF = [re.compile(r'Offensive foul by (.*) \(').search(current_action), 'PF', 0]
 
-    CF = [re.compile(r'Clear path foul by (.*)').search(current_action), 'PF', 0]
+    CF = [re.compile(r'Clear path foul by (.*)').search(current_action), 'FFF', 0]
 
     LBF = [re.compile(r'Loose ball foul by (.*) \(').search(current_action), 'PF', 0]
 
