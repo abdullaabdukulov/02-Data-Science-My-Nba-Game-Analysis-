@@ -16,7 +16,6 @@ DATA will be an array of hashes with this format:
 git clone "link"
 pip freeze > requirements.txt
 
-
 ## Usage
 pip install -r requirements.txt
 We have to run nba_game_analysis.py file in order to check this project is working very well or not
