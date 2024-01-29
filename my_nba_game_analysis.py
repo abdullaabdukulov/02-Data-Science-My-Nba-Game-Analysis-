@@ -11,20 +11,22 @@ def find_data(current_action):
         (re.compile(r'([\S]. [\S]*) misses (\d)-pt layup'), "FGA"),
         (re.compile(r'([\S]. [\S]*) makes clear path free throw (.*) of (.*)'), "FT"),
         (re.compile(r'([\S]. [\S]*) misses free throw (.*) of (.*)'), "FTA"),
-        (re.compile(r'([\S]. [\S]*) makes 2-pt hook shot'), "FG"),
-        (re.compile(r'([\S]. [\S]*) misses 2-pt hook shot'), "FGA"),
+        (re.compile(r'([\S]. [\S]*) makes (\d)-pt hook shot'), "FG"),
+        (re.compile(r'([\S]. [\S]*) misses (\d)-pt hook shot'), "FGA"),
         (re.compile(r'Turnover by ([\S]. [\S]*[^) ])'), "TOV"),
         (re.compile(r'assist by ([\S]. [\S]*[^) ])'), "AST"),
         (re.compile(r'steal by ([\S]. [\S]*[^) ])'), "STL"),
         (re.compile(r'block by ([\S]. [\S]*)[^) ]'), "BLK"),
-        (re.compile(r'([\S]. [\S]*) makes free throw (.*) of (.*)'), "FT"),
-        (re.compile(r' Offensive rebound by ([\S]. [\S]*[^) ])'), "ORB"),
+        (re.compile(r'([\S]. [\S]*) makes (\d)-pt (3-pt )?jump shot from'), "3P"),
+        (re.compile(r'([\S]. [\S]*) misses (\d)-pt (3-pt )?jump shot from'), "3PA"),
+        (re.compile(r'Offensive rebound by ([\S]+\. [\S]*)'), "ORB"),
         (re.compile(r'Defensive rebound by ([\S]+\. [\S]*)'), "DRB"),
         (re.compile(r'(Personal|Shooting|Offensive|Clear path|Louse ball) foul by ([\S]+\. [\S]*[^) ])'), "PF")
     ]
 
     re_data = [(action[0].search(current_action), action[1]) for action in actions]
     return [a for a in re_data if a[0] is not None]
+
 
 
 def load_data(data):
