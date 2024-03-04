@@ -37,6 +37,11 @@ def analyse_nba_game(play_by_play_moves):
             match = re.compile(pattern).search(desc)
             if match:
                 player_name = match.group(1)
+                
+                # Skip if player name is "Team 0"
+                if player_name == "Team":
+                    continue
+                
                 if relevant_team == home_team_name:
                     player_data = player_data_home
                 elif relevant_team == away_team_name:
@@ -73,6 +78,7 @@ def analyse_nba_game(play_by_play_moves):
     away_team_data = {"name": play_by_play_moves.iloc[0]['AWAY_TEAM'], "players_data": list(player_data_away.values())}
 
     return {"home_team": home_team_data, "away_team": away_team_data}
+
 
 
 def print_nba_game_stats(team_dict):
